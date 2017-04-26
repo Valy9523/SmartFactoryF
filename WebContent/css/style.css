@@ -242,7 +242,7 @@ label{
     visibility: visible;
     opacity: 1;
 }
-a.userIcon {
+.userFunction {
     position: relative;
     left: 52px;
     top: 11px;

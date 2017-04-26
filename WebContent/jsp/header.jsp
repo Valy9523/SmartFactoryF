@@ -40,14 +40,14 @@
 				<div class="clearfix"></div>
 			</form>
 		</div>
-		<div class="col-md-1 dropdown">
-				<a href="#" class="dropdown-toggle userIcon" data-toggle="dropdown">
+		<div class="col-md-1 dropdown userFunction">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					User Avatar
 					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu">
 					<li><a href="#">注销</a></li>
-					<li><a href="#">重新登录</a></li>
+					<li><a href="#">上传/修改头像</a></li>
 					<li><a href="#">修改密码</a></li>
 				</ul>
 			</div>
