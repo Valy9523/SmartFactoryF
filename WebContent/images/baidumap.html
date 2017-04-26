@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta name="keywords" content="锟劫度碉拷图,锟劫度碉拷图API锟斤拷锟劫度碉拷图锟皆讹拷锟藉工锟竭ｏ拷锟劫度碉拷图锟斤拷锟斤拷锟矫癸拷锟斤拷" />
+<meta name="description" content="锟劫度碉拷图API锟皆讹拷锟斤拷锟酵硷拷锟斤拷锟斤拷锟斤拷没锟斤拷诳锟斤拷踊锟斤拷锟斤拷锟斤拷锟斤拷锟缴百度碉拷图" />
+<title>锟劫度碉拷图API锟皆讹拷锟斤拷锟酵�</title>
+<!--锟斤拷锟矫百度碉拷图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+</head>
+
+<body>
+  <!--锟劫度碉拷图锟斤拷锟斤拷-->
+  <div style="width:1123px;height:550px;border:#ccc solid 1px;" id="dituContent"></div>
+</body>
+<script type="text/javascript">
+    //锟斤拷锟斤拷锟酵筹拷始锟斤拷锟斤拷图锟斤拷锟斤拷
+    function initMap(){
+        createMap();//锟斤拷锟斤拷锟斤拷图
+        setMapEvent();//锟斤拷锟矫碉拷图锟铰硷拷
+        addMapControl();//锟斤拷锟酵硷拷锟接控硷拷
+        addMarker();//锟斤拷锟酵硷拷锟斤拷锟斤拷marker
+    }
+    
+    //锟斤拷锟斤拷锟斤拷图锟斤拷锟斤拷
+    function createMap(){
+        var map = new BMap.Map("dituContent");//锟节百度碉拷图锟斤拷锟斤拷锟叫达拷锟斤拷一锟斤拷锟斤拷图
+        var point = new BMap.Point(116.31323,40.048214);//锟斤拷锟斤拷一锟斤拷锟斤拷锟侥碉拷锟斤拷锟�
+        map.centerAndZoom(point,17);//锟借定锟斤拷图锟斤拷锟斤拷锟侥碉拷锟斤拷锟疥并锟斤拷锟斤拷图锟斤拷示锟节碉拷图锟斤拷锟斤拷锟斤拷
+        window.map = map;//锟斤拷map锟斤拷锟斤拷锟芥储锟斤拷全锟斤拷
+    }
+    
+    //锟斤拷图锟铰硷拷锟斤拷锟矫猴拷锟斤拷
+    function setMapEvent(){
+        map.enableDragging();//锟斤拷锟矫碉拷图锟斤拷拽锟铰硷拷锟斤拷默锟斤拷锟斤拷锟斤拷(锟缴诧拷写)
+        map.enableScrollWheelZoom();//锟斤拷锟矫碉拷图锟斤拷锟街放达拷锟斤拷小
+        map.enableDoubleClickZoom();//锟斤拷锟斤拷锟斤拷锟剿�锟斤拷锟脚达拷默锟斤拷锟斤拷锟斤拷(锟缴诧拷写)
+        map.enableKeyboard();//锟斤拷锟矫硷拷锟斤拷锟斤拷锟斤拷锟斤拷锟揭硷拷锟狡讹拷锟斤拷图
+    }
+    
+    //锟斤拷图锟截硷拷锟斤拷雍锟斤拷锟�
+    function addMapControl(){
+        //锟斤拷锟酵硷拷锟斤拷锟斤拷锟斤拷锟脚控硷拷
+	var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+	map.addControl(ctrl_nav);
+        //锟斤拷锟酵硷拷锟斤拷锟斤拷锟斤拷锟斤拷图锟截硷拷
+	var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+	map.addControl(ctrl_ove);
+        //锟斤拷锟酵硷拷锟斤拷锟接憋拷锟斤拷呖丶锟�
+	var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+	map.addControl(ctrl_sca);
+    }
+    
+    //锟斤拷注锟斤拷锟斤拷锟斤拷
+    var markerArr = [{title:"智慧工厂",content:"智慧工厂",point:"116.313778|40.047012",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+		 ];
+    //锟斤拷锟斤拷marker
+    function addMarker(){
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
+            });
+			
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
+    }
+    //锟斤拷锟斤拷InfoWindow
+    function createInfoWindow(i){
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+        return iw;
+    }
+    //锟斤拷锟斤拷一锟斤拷Icon
+    function createIcon(json){
+        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        return icon;
+    }
+    
+    initMap();//锟斤拷锟斤拷锟酵筹拷始锟斤拷锟斤拷图
+</script>
+</html>

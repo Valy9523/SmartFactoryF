@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="userDao" class="com.tgb.dao.UserDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="userManagerBase" class="com.tgb.manager.UserManagerImpl">
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	
+	<!-- 此处为代理 -->
+	<bean name="userManager" parent="transactionProxy">
+		<property name="target" ref="userManagerBase"></property>
+	</bean>	
+	
+	<bean id="elecDeviceDao" class="com.tgb.dao.ElecDeviceDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="elecDeviceManagerBase" class="com.tgb.manager.ElecDeviceManagerImpl">
+	     <property name="elecDeviceDao" ref="elecDeviceDao"></property>
+	</bean>
+	
+	<bean name="elecDeviceManager" parent="transactionProxy">
+		<property name="target" ref="elecDeviceManagerBase"></property>
+	</bean>	
+	
+	<bean id="buildMaterDao" class="com.tgb.dao.BuildMaterDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="buildMaterManagerBase" class="com.tgb.manager.BuildMaterManagerImpl">
+	     <property name="buildMaterDao" ref="buildMaterDao"></property>
+	</bean>
+	
+	<bean name="buildMaterManager" parent="transactionProxy">
+		<property name="target" ref="buildMaterManagerBase"></property>
+	</bean>	
+	
+	<bean id="heavMachDao" class="com.tgb.dao.HeavMachDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="heavMachManagerBase" class="com.tgb.manager.HeavMachManagerImpl">
+	     <property name="heavMachDao" ref="heavMachDao"></property>
+	</bean>
+	
+	<bean name="heavMachManager" parent="transactionProxy">
+		<property name="target" ref="heavMachManagerBase"></property>
+	</bean>	
+	
+	<bean id="finePartsDao" class="com.tgb.dao.FinePartsDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="finePartsManagerBase" class="com.tgb.manager.FinePartsManagerImpl">
+	     <property name="finePartsDao" ref="finePartsDao"></property>
+	</bean>
+	
+	<bean name="finePartsManager" parent="transactionProxy">
+		<property name="target" ref="finePartsManagerBase"></property>
+	</bean>	
+	
+	<bean id="ordersDao" class="com.tgb.dao.OrdersDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="ordersManagerBase" class="com.tgb.manager.OrdersManagerImpl">
+	     <property name="ordersDao" ref="ordersDao"></property>
+	</bean>
+	
+	<bean name="ordersManager" parent="transactionProxy">
+		<property name="target" ref="ordersManagerBase"></property>
+	</bean>
+	<bean id="reviewDao" class="com.tgb.dao.ReviewDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean name="reviewDaoTR" parent="transactionProxy">
+		<property name="target" ref="reviewDao"></property>
+	</bean>
+	<bean id="surveyDao" class="com.tgb.dao.SurveyDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean name="surveyDaoTR" parent="transactionProxy">
+		<property name="target" ref="surveyDao"></property>
+	</bean>
+</beans>
