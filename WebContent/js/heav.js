@@ -20,7 +20,6 @@
 						var rsList = new Array();
 						titleTotal= result.total;
 						$.each(result.rs, function (k, v) {
-							
 				  var div = "<div class='col-md-3 product-men yes-marg'>"
 							+"<div class='men-pro-item simpleCart_shelfItem'>"
 							+	"<div class='men-thumb-item'>"
@@ -68,7 +67,7 @@
 								},  
 						}
 						$('#pageUl').bootstrapPaginator(options);
-						$('#totalPage').text("/"+pages);
+						$("#totalPageC").text(pages);
 						name='';
 					}
 					else{
@@ -83,7 +82,7 @@
 				}
 			});
 		}
-	
+		
 		goPage(1);
 		
 		$(document).on('click','#jumpBtn',function(){

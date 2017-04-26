@@ -163,7 +163,7 @@ addCart();
 									<span class="separator"></span>
 									<p><span class="item_price">¥500</span></p>
 									<span class="separator"></span>
-									<a href="/Factory/search/detail.do?table=elec_device&name=表面声波式触控屏" class="hvr-outline-out button2" >了解更多 </a>
+									<a href="/Factory/search/detail.do?table=elec_device&name=表面声波式触控屏" class="hvr-outline-out button2" >了解更多</a>
 						</div>
 					</div>
 			</div>
@@ -200,7 +200,7 @@ addCart();
 									<span class="separator"></span>
 									<p><span class="item_price">¥150</span></p>
 									<span class="separator"></span>
-									<a href="/Factory/search/detail.do?table=fine_parts&name=关节轴承"class="hvr-outline-out button2" >了解更多 </a>
+									<a href="/Factory/search/detail.do?table=fine_parts&name=零件定制"class="hvr-outline-out button2" >了解更多 </a>
 						</div>
 					</div>
 			</div>

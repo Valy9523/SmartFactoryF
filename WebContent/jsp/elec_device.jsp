@@ -249,7 +249,7 @@ var type = '${type}';
 <script> 
     $('.loading').animate({'width':'66%'},100);  //第一个进度节点 
 </script>
-		
+		<span id="totalPage">总页数：<span id="totalPageC"></span></span>
 		<div class="pagination-grid text-right">
 			<ul class="pagination"id="pageUl"></ul>
 		</div> 

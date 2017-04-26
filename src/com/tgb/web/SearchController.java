@@ -40,36 +40,10 @@ public class SearchController {
 	@Resource(name="finePartsManager")
 	private FinePartsManager finePartsManager;
 	
-	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value="/homeProduct.do",produces="text/json; charset=UTF-8")
 	public String homeProduct(HttpServletRequest request){
-		List eList = elecDeviceManager.getByDate(),
-				          eList2 = elecDeviceManager.getSpecial(),
-		                  eList3 = elecDeviceManager.getByDate2(),
-		                  bList = buildMaterManager.getByDate(),
-				          bList3 = buildMaterManager.getByDate2(),
-				          bList2 = buildMaterManager.getSpecial(),
-		     hList = heavMachManager.getByDate(),
-				          hList3 = heavMachManager.getByDate2(),
-				          hList2 = heavMachManager.getSpecial(),
-		     fList = finePartsManager.getByDate(),
-				          fList3 = finePartsManager.getByDate2(),
-				          fList2 = finePartsManager.getSpecial();
-		Map<String, Object> map = new HashMap<String, Object>();
-		hList.addAll(fList);
-		bList.addAll(hList);
-		eList.addAll(bList);
-		hList2.addAll(fList2);
-		bList2.addAll(hList2);
-		eList2.addAll(bList2);
-		hList3.addAll(fList3);
-		bList3.addAll(hList3);
-		eList3.addAll(bList3);
-		map.put("eList", eList);
-		map.put("eList2", eList2);
-		map.put("eList3", eList3);
-		JSONObject jsonObject = JSONObject.fromObject(map);
+		JSONObject jsonObject = JSONObject.fromObject(createHomeList());
 		String rs = jsonObject.toString();
 		return rs;
 	}
@@ -115,53 +89,21 @@ public class SearchController {
 	@ResponseBody
 	@RequestMapping(value="/getSelect.do",produces="text/json; charset=UTF-8")
 	public String getSelect(HttpServletRequest request) {
+		
 		int page = Integer.parseInt(request.getParameter("page"));
 		
 		String table = request.getParameter("table");
 		
 		String type = request.getParameter("type");
 		
-		
 		String name = request.getParameter("name");
 		
 		String sorder = request.getParameter("order");
-		int order = 1;
-		if (sorder!=null) {
-	    order = Integer.parseInt(sorder);
-		}
 		
-		Object list = null;
-		
-		int total = 0;
-		
-		if (table.equals("elec_device")) {
-			 total = elecDeviceManager.getCount(type,name);
-		    
-			 list =(List<Elec_device>) elecDeviceManager.getSelect(page,order,type,name);
-		}
-		else if(table.equals("build_mater")) {
-             total = buildMaterManager.getCount(type,name);
-		     list = (List<Build_mater>)buildMaterManager.getSelect(page,order,type,name);
-		}
-		else if (table.equals("heav_mach")) {
-			 total = heavMachManager.getCount(name);
-			 list =(List<Heav_mach>) heavMachManager.getSelect(page, name);
-		}
-		else if (table.equals("fine_parts")) {
-			total = finePartsManager.getCount(name);
-			list = (List<Fine_parts>)finePartsManager.getSelect(page, name);
-		}
-		Map<String, Object> map = new HashMap<String, Object>();
-		
-		map.put("total", total);
-		
-		map.put("rs", list);
-		
-	    JSONObject jsonMap = JSONObject.fromObject(map);
+	    JSONObject jsonMap = JSONObject.fromObject(selectTable(table, type, page, name, sorder));
 		
 	    String result = jsonMap.toString();
 	    
-		
 	    return result;
 	}
 	
@@ -197,5 +139,75 @@ public class SearchController {
 		
 		return new ModelAndView("/detail",eMap);
 		
+	}
+	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	private Map createHomeList(){
+		List eList = elecDeviceManager.getByDate(),
+		          eList2 = elecDeviceManager.getSpecial(),
+              eList3 = elecDeviceManager.getByDate2(),
+              bList = buildMaterManager.getByDate(),
+		          bList3 = buildMaterManager.getByDate2(),
+		          bList2 = buildMaterManager.getSpecial(),
+              hList = heavMachManager.getByDate(),
+		          hList3 = heavMachManager.getByDate2(),
+		          hList2 = heavMachManager.getSpecial(),
+              fList = finePartsManager.getByDate(),
+		          fList3 = finePartsManager.getByDate2(),
+		          fList2 = finePartsManager.getSpecial();             
+		Map<String, Object> map = new HashMap<String, Object>();
+		hList.addAll(fList);
+		bList.addAll(hList);
+		eList.addAll(bList);
+		hList2.addAll(fList2);
+		bList2.addAll(hList2);
+		eList2.addAll(bList2);
+		hList3.addAll(fList3);
+		bList3.addAll(hList3);
+		eList3.addAll(bList3);
+		map.put("eList", eList);
+		map.put("eList2", eList2);
+		map.put("eList3", eList3);
+		return map;
+	}
+	
+	@SuppressWarnings("rawtypes")
+	private Map selectTable(String table,String type,int page,String name,String sorder){
+		
+        int order = 1;
+		
+		if (sorder!=null) {
+	    order = Integer.parseInt(sorder);
+		}
+		
+		Object list = null;
+		
+		int total = 0;
+		
+		if (table.equals("elec_device")) {
+			 total = elecDeviceManager.getCount(type,name);
+		    
+			 list =(List<Elec_device>) elecDeviceManager.getSelect(page,order,type,name);
+		}
+		else if(table.equals("build_mater")) {
+             total = buildMaterManager.getCount(type,name);
+		     list = (List<Build_mater>)buildMaterManager.getSelect(page,order,type,name);
+		}
+		else if (table.equals("heav_mach")) {
+			 total = heavMachManager.getCount(name);
+			 list =(List<Heav_mach>) heavMachManager.getSelect(page, name);
+		}
+		else if (table.equals("fine_parts")) {
+			total = finePartsManager.getCount(name);
+			list = (List<Fine_parts>)finePartsManager.getSelect(page, name);
+		}
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("total", total);
+		
+		map.put("rs", list);
+		
+		return map;
+	
 	}
 }

@@ -62,13 +62,13 @@ var type = '${type}';
 		<div class="col-md-8 electro-left text-center">
 			<div class="electro-img-left mask">
 				<div class="content-grid-effect slow-zoom vertical">
-					<div class="img-box"><img  class="img-responsive zoom-img item_image" src="/Factory/images/watch.jpg" alt=""></div>
+					<div class="img-box"><img  class="img-responsive zoom-img item_image" src="/Factory/images/chilun1.jpg" alt=""></div>
 						<div class="info-box">
 							<div class="info-content electro-text simpleCart_shelfItem">
 								<a class="item_name"><h4>五轴传动齿轮</h4></a>
 								<span class="separator"></span>
 								<a class="item_table" style="display:none;">fine_parts</a>
-								<img  class="item_image" src="/Factory/images/watch.jpg" alt="" style="display:none; ">
+								<img  class="item_image" src="/Factory/images/chilun2.jpg" alt="" style="display:none; ">
 								<p><span class="item_price">¥500</span></p>
 								<span class="separator"></span>
 								<a class="item_add hvr-outline-out button2" href="#">加入购物车</a>
@@ -78,13 +78,13 @@ var type = '${type}';
 			</div>
 			<div class="electro-img-btm-left mask">
 				<div class="content-grid-effect slow-zoom vertical">
-					<div class="img-box"><img src="../images/e1.jpg" alt="image" class="img-responsive zoom-img"></div>
+					<div class="img-box"><img src="../images/zhoucheng1.jpg" alt="image" class="img-responsive zoom-img"></div>
 						<div class="info-box">
 							<div class="info-content electro-text simpleCart_shelfItem">
-								<a class="item_name"><h4>气动元件</h4></a>
+								<a class="item_name"><h4>轴承</h4></a>
 								<span class="separator"></span>
 								<a class="item_table" style="display:none;">fine_parts</a>
-								<img  class="item_image" src="/Factory/images/e1.jpg" alt="" style="display:none; ">
+								<img  class="item_image" src="/Factory/images/zhoucheng2.jpg" alt="" style="display:none; ">
 								<p><span class="item_price">¥170</span></p>
 								<span class="separator"></span>
 								<a class="item_add hvr-outline-out button2" href="javascript:;">加入购物车</a>
@@ -94,13 +94,13 @@ var type = '${type}';
 			</div>
 			<div class="electro-img-btm-right mask">
 				<div class="content-grid-effect slow-zoom vertical">
-					<div class="img-box"><img src="../images/e2.jpg" alt="image" class="img-responsive zoom-img"></div>
+					<div class="img-box"><img src="../images/luoshuan1.jpg" alt="image" class="img-responsive zoom-img"></div>
 						<div class="info-box">
 							<div class="info-content electro-text simpleCart_shelfItem">
 								<a class="item_name"><h4>法兰螺栓</h4></a>
 								<span class="separator"></span>
 								<a class="item_table" style="display:none;">fine_parts</a>
-								<img  class="item_image" src="/Factory/images/e2.jpg" alt="" style="display:none; ">
+								<img  class="item_image" src="/Factory/images/luoshuan2.jpg" alt="" style="display:none; ">
 								<p><span class="item_price">¥170</span></p>
 								<span class="separator"></span>
 								<a class="item_add hvr-outline-out button2" href="javascript:;">加入购物车</a>
@@ -113,13 +113,13 @@ var type = '${type}';
 		<div class="col-md-4 electro-right text-center">
 			<div class="electro-img-rt mask">
 				<div class="content-grid-effect slow-zoom vertical">
-					<div class="img-box"><img src="../images/e4.jpg" alt="image" class="img-responsive zoom-img"></div>
+					<div class="img-box"><img src="../images/tanhuang1.jpg" alt="image" class="img-responsive zoom-img"></div>
 						<div class="info-box">
 							<div class="info-content electro-text simpleCart_shelfItem">
-								<a class="item_name"><h4>称重机座</h4></a>
+								<a class="item_name"><h4>弹簧</h4></a>
 								<span class="separator"></span>
 								<a class="item_table" style="display:none;">fine_parts</a>
-								<img  class="item_image" src="/Factory/images/e4.jpg" alt="" style="display:none; ">
+								<img  class="item_image" src="/Factory/images/tanhuang2.jpg" alt="" style="display:none; ">
 								<p><span class="item_price">¥170</span></p>
 								<span class="separator"></span>
 								<a class="item_add hvr-outline-out button2" href="javascript:;">加入购物车</a>
@@ -138,6 +138,7 @@ var type = '${type}';
 						<div class="clearfix"></div>
 			
 			</div>
+			<span id="totalPage">总页数：<span id="totalPageC"></span></span>
 			<div class="pagination-grid text-right">
 			<ul class="pagination"id="pageUl"></ul>
 		   </div> 

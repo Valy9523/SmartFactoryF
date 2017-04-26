@@ -98,7 +98,7 @@
 						var options = {
 								bootstrapMajorVersion: 3,  
 								currentPage: page,
-								numberOfPages: 4,
+								numberOfPages: 3,
 								totalPages: pages, 
 								onPageClicked: function (event, originalEvent, type, page) {
 									if(page != lastCount){
@@ -110,7 +110,7 @@
 								},  
 						}
 						$('#pageUl').bootstrapPaginator(options);
-						$('#totalPage').text("/"+pages);
+						$("#totalPageC").text(pages);
 						name='';
 					}
 					else{

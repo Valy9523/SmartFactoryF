@@ -50,11 +50,12 @@ public class HeavMachDaoImpl implements HeavMachDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Heav_mach> getSelect(int page, String name) {
-		String hql = "from Heav_mach h ";
+		String hql = "from Heav_mach h order by h.Date desc";
 		
 		if(name!=null&&!name.equals("")){
 			StringBuffer stringBuffer = new StringBuffer(hql);
-			stringBuffer.append( " where h.Name like '%"+name+"%' ");
+			int index = stringBuffer.indexOf("order");
+			stringBuffer.insert(index," where h.Name like '%"+name+"%' ");
 			System.out.println(stringBuffer);
 			hql=stringBuffer.toString();
 		}

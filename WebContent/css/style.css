@@ -175,7 +175,14 @@ label{
     border:none;
 	outline:none;
 }
-
+span#totalPage {
+    position: relative;
+    left: 915px;
+    top: 73px;
+    font-size: 14px;
+    color: #337ab7;
+    text-decoration: none;
+}
 .search {
     float: left;
     width: 57%;
@@ -2482,7 +2489,7 @@ background:#FDA30E;
 }
 
 #pageCount {
-	width: 20px;
+	width: 33px;
 	height: 18px;
 	border: 1px solid #ddd
 }

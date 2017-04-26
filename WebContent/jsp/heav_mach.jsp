@@ -19,7 +19,6 @@ userId = <%=session.getAttribute("userId")%>;
 }
 var table = '${table}';
 var name = '${name}';
-var type = '${type}';
 </script>
 <!-- //for-mobile-apps -->
 <link href="/Factory/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
@@ -93,13 +92,13 @@ var type = '${type}';
 			</div>
 			<div class="electro-img-btm-right mask">
 				<div class="content-grid-effect slow-zoom vertical">
-					<div class="img-box"><img src="../images/e2.jpg" alt="image" class="img-responsive zoom-img"></div>
+					<div class="img-box"><img src="../images/huhanji.jpg" alt="image" class="img-responsive zoom-img"></div>
 						<div class="info-box">
 							<div class="info-content electro-text simpleCart_shelfItem">
-								<a class="item_name"><h4>升降机</h4></a>
+								<a class="item_name"><h4>弧焊机</h4></a>
 								<span class="separator"></span>
 								<a class="item_table" style="display:none;">heav_mach</a>
-								<img  class="item_image" src="/Factory/images/e2.jpg" alt="" style="display:none; ">
+								<img  class="item_image" src="/Factory/images/huhanji2.jpg" alt="" style="display:none; ">
 								<p><span class="item_price">¥500</span></p>
 								<span class="separator"></span>
 								<a class="item_add hvr-outline-out button2" href="javascript:;">加入购物车</a>
@@ -112,13 +111,13 @@ var type = '${type}';
 		<div class="col-md-4 electro-right text-center">
 			<div class="electro-img-rt mask">
 				<div class="content-grid-effect slow-zoom vertical">
-					<div class="img-box"><img src="../images/e4.jpg" alt="image" class="img-responsive zoom-img"></div>
+					<div class="img-box"><img src="../images/lixinbeng.jpg" alt="image" class="img-responsive zoom-img"></div>
 						<div class="info-box">
 							<div class="info-content electro-text simpleCart_shelfItem">
-								<a class="item_name"><h4>装载机</h4></a>
+								<a class="item_name"><h4>离心泵</h4></a>
 								<span class="separator"></span>
 								<a class="item_table" style="display:none;">heav_mach</a>
-								<img  class="item_image" src="/Factory/images/e4.jpg" alt="" style="display:none; ">
+								<img  class="item_image" src="/Factory/images/lixinbeng2.jpg" alt="" style="display:none; ">
 								<p><span class="item_price">¥500</span></p>
 								<span class="separator"></span>
 								<a class="item_add hvr-outline-out button2" href="javascript:;">加入购物车</a>
@@ -136,6 +135,7 @@ var type = '${type}';
 			 </div>
 			       <div class="clearfix"></div>
 			</div>
+			<span id="totalPage">总页数：<span id="totalPageC"></span></span>
 			<div class="pagination-grid text-right">
 			<ul class="pagination"id="pageUl"></ul>
 		   </div> 

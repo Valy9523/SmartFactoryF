@@ -49,11 +49,12 @@ public class FinePartsDaoImpl implements FinePartsDao {
 	@SuppressWarnings("unchecked")
 	@Override
 	public List<Fine_parts> getSelect(int page, String name) {
-		String hql = "from Fine_parts f ";
+		String hql = "from Fine_parts f order by f.Date desc ";
 		
 		if(name!=null&&!name.equals("")){
 			StringBuffer stringBuffer = new StringBuffer(hql);
-			stringBuffer.append( " where f.Name like '%"+name+"%' ");
+			int index = stringBuffer.indexOf("order");
+			stringBuffer.insert(index," where f.Name like '%"+name+"%' ");
 			System.out.println(stringBuffer);
 			hql=stringBuffer.toString();
 		}

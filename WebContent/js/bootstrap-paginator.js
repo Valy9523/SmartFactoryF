@@ -356,7 +356,7 @@
                     listContainer.append(last);
                 }
             }
-            listContainer.append("&nbsp<span id='jumpPage'>跳转至:&nbsp<input name='pageCount' type='number' min='1' id='pageCount' >&nbsp<span id='totalPage'></span>页</span>");
+            listContainer.append("&nbsp<span id='jumpPage'>跳转至:&nbsp<input name='pageCount' type='number' min='1' id='pageCount' >&nbsp页</span>");
             listContainer.append("<button class='jumpBtn' id='jumpBtn' type='button'>Go!</button>");
         },
 

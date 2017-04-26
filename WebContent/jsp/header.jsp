@@ -40,7 +40,8 @@
 				<div class="clearfix"></div>
 			</form>
 		</div>
-		<div class="col-md-1 dropdown userFunction">
+		
+		<!-- <div class="col-md-1 dropdown userFunction">
 				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 					User Avatar
 					<b class="caret"></b>
@@ -50,7 +51,7 @@
 					<li><a href="#">上传/修改头像</a></li>
 					<li><a href="#">修改密码</a></li>
 				</ul>
-			</div>
+		</div> -->
 		<div class="col-md-2 header-right footer-bottom">
 			<ul>
 				<li><a href="/Factory/jsp/login.jsp" class="use1" ><span>登录</span></a>
