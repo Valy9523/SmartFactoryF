@@ -209,7 +209,7 @@ label{
     position: absolute;
     bottom: 0;
     width: 19%;
-    left: 95px;
+    left: 50px;
     text-align: center;
     right: -25px;
     padding: 2px 0px;
@@ -242,7 +242,11 @@ label{
     visibility: visible;
     opacity: 1;
 }
-
+a.userIcon {
+    position: relative;
+    left: 52px;
+    top: 11px;
+}
 /*-- //header-bot --*/
 /*-- banner-top --*/
 .ban-top{

@@ -40,9 +40,9 @@
 				<div class="clearfix"></div>
 			</form>
 		</div>
-		<div class=" col-md-1 dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					用户头像
+		<div class="col-md-1 dropdown">
+				<a href="#" class="dropdown-toggle userIcon" data-toggle="dropdown">
+					User Avatar
 					<b class="caret"></b>
 				</a>
 				<ul class="dropdown-menu">
